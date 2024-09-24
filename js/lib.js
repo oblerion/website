@@ -11,19 +11,6 @@ export function textbutton(text,x,y,size)
 	let mx = love.mouse_getX();
 	let my = love.mouse_getY();
 	let lastcolor = love.graphics_getColor();
-	let lt = love.touch_getTouches(); 
-	if(lt.length>0)
-	{
-		for(let i=0;i<lt.length;i++)
-		{
-			let t = love.touch_getPosition(lt[i]);
-			if(collide(t.x,t.y,5,5,x,y,
-			text.length*(size*0.5),size))
-			{
-				col = 1;
-			}
-		}
-	}
 	if(collide(mx,my,8,8,x,y,text.length*(size*0.5),size))
 	{
 		col = 0;
@@ -56,19 +43,6 @@ export function imglink(img,x,y,url,sw,sh)
 	if(sw!=null) lsw=sw;
 	if(sh!=null) lsh=sh;
 	love.graphics_draw(img,x,y,0,img.getWidth()*lsw,img.getHeight()*lsh);
-	let lt = love.touch_getTouches();
-	if(lt.length>0)
-	{
-		for(let i=0;i<lt.length;i++)
-		{
-			let t = love.touch_getPosition(lt[i]);
-			if(collide(t.x,t.y,5,5,x,y,
-			img.getWidth()*lsw,img.getHeight()*lsh))
-			{
-				col = true;
-			}
-		}
-	}
 	if(collide(mx,my,10,10,x,y,img.getWidth()*lsw,img.getHeight()*lsh))
 	{
 		col=true;

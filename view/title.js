@@ -47,10 +47,12 @@ export function title_draw(img1,scale)
 	{
 		love.graphics_setColor(80,80,180,255);
 		let txtX = (love.graphics_getWidth()-getsize(str_link[i],sizefont_link*scale))/2;
-		let txtY = 70+img1.getHeight()*scale+125;
-		textlink(str_link[i],txtX,txtY+(i*sizefont_link*scale),sizefont_link*scale,str_link[i+2]);
+		let txtY = 70+img1.getHeight()*scale+130;
+		textlink(str_link[i],txtX,
+		txtY+(i*(sizefont_link*0.8)*scale),sizefont_link*scale,str_link[i+2]);
  		txtX = (love.graphics_getWidth()-getsize(str_link[i+1],sizefont_txt*scale))/2;
 		love.graphics_setColor(30,30,130,255);
-		love.graphics_print(str_link[i+1],txtX,txtY+(i*sizefont_link*scale+10)+10,0,sizefont_txt*scale);
+		love.graphics_print(str_link[i+1],txtX,
+		txtY+(i*(sizefont_link*0.8)*scale+10)+10,0,sizefont_txt*scale);
 	}
 }
