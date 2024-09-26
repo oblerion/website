@@ -1,0 +1,39 @@
+a{
+	text-align: center;
+	color: black;
+	font-family: Pixelify Sans
+}
+a:hover
+{
+	color: aqua;
+	padding: 6px 2px;
+}
+button{
+	padding; 10px 2px;
+	font-size: 19px;
+	font-family: Pixelify Sans;
+	color: black;
+	background-color: gray;
+}
+button:hover
+{
+	color: aqua;
+	padding: 6px 2px;
+}
+html{
+	background: linear-gradient(black,#475151);
+}		
+canvas{
+	border-radius: 40px;
+}
+ul{
+	list-style:none;
+	padding-left: 0px;
+	text-align: center;
+}
+li{
+	display: inline;
+	padding: 2px 1px;
+	background-color: gray;
+	border-radius: 5px;
+}	

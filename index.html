@@ -1,34 +1,55 @@
 <!DOCTYPE html> 
 <html id="html" lang="en">
 <title>love2d.js</title>
-<header>
-	<a href="https://oblerion.itch.io/love2djs">
-		<p style="text-align:center;">powered by love2d.js</p>
-	</a>
-</header>
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-	@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-    </style>
-
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); 
+		@import url('./css/style.css')
+	</style>
     <script nomodule>
 		// if no support for module
 		document.write("your old browser don't support module type : need update it");
-	i</script>
-	<script type="module">
+    </script>
+    <script type="module">
 		import {love} from "./js/love2d.js";
-		import {title_draw} from "./view/title.js";
+		import {title_draw} from "./js/title.js";
 		let title_img = love.graphics_newImage("asset/canvas-nightshade-slow.png");
 		let os = love.system_getOs()
+		let scale = 1;
+		let scene_id=0;
+
+		document.getElementById("btn_title").onclick=function()
+		{
+			scene_id=0;
+		}
+		document.getElementById("btn_C").onclick=function()
+		{
+			scene_id=1;
+		}
+		document.getElementById("btn_JS").onclick=function()
+		{
+			scene_id=2;
+		}
+		document.getElementById("btn_3D").onclick=function()
+		{
+			scene_id=3;
+		}
+			
 		love.load=function()
 		{
-			if(love.window_getWidth()<800)
+			if(love.window_getWidth()<300) scale = 0.6;
+			else if(love.window_getWidth()<400) scale = 0.7;
+			else if(love.window_getWidth()<800) scale = 0.8;
+
+
+			if(love.window_getWidth()<=800)
 				love.window_setMode(
 					love.window_getWidth()-20,
-					800);
+					550*(scale - 0.05));
 			else
-				love.window_setMode(800,800);
+				love.window_setMode(800,550);
+			love.window_setTitle("magnus oblerion website"); 
 			love.graphics_setFont("Pixelify Sans");
 		}
 		love.update=function(dt)
@@ -43,21 +64,65 @@
 
 		love.draw=function()
 		{	
-			let scale = 1;
-			if(love.window_getWidth()<400) scale = 0.7;
-			else if(love.window_getWidth()<800) scale = 0.8;
-			love.graphics_setColor(51,204,204,255);
-			love.graphics_rectangle("fill",0,0,
-			love.graphics_getWidth(),
-			love.graphics_getHeight());
-			title_draw(title_img,scale);
+			
+			//let sv = document.getElementById("tech-select").value;
+			switch(scene_id)
+			{
+				case 0:
+					title_draw(title_img,scale);
+				break;
+				case 1:
+					love.graphics_setColor(0,0,0,255);
+					love.graphics_print("scene1",23,23,15);
+				break;
+				case 2:
+
+				break;
+				case 3:
+
+				break;
+				default:;
+			}		
+
 	
 		}
-	</script> 
+    </script> 
 </head>
 <body>
-	<main>
-		<canvas id="canvas_love2d"></canvas>
-	</main>		
+	<canvas id="canvas_love2d"></canvas>	
+	<div style="text-align:center;">
+		<ul>
+			<li><button id="btn_title">title</button></li>
+			<li><button id="btn_C">C</button></li>
+			<li><button id="btn_JS">JS</button></li>
+			<li><button id="btn_3D">3d</button></li> 
+		</ul>
+	</div>
+	<div style="text-align:center;">
+		<a href="https://oblerion.itch.io/gba-engine">
+			<img src="https://img.itch.zone/aW1nLzE3Mjg2NjIwLnBuZw==/180x143%23c/MlEygI.png"/>
+		</a>
+		<a  href="https://oblerion.itch.io/elyoko">
+			<img src="https://img.itch.zone/aW1nLzE3NzMzMDc2LnBuZw==/180x143%23c/dUagsX.png"/>
+		</a>
+		<a href="https://oblerion.itch.io/love2djs">
+			<img src="https://img.itch.zone/aW1nLzg4NTQ1MzUucG5n/180x143%23c/Hw4tmq.png"/> 
+		</a>
+		<a href="https://oblerion.itch.io/meca-frelion">
+			<img src="https://img.itch.zone/aW1nLzE3NzEyNDU5LnBuZw==/180x143%23c/ZvGh%2Bs.png"/>
+		</a>
+	</div>	
+	<ul> 
+		<li><a href="https://x.com/MagnusOblerion">Twitter</a></li>
+		<li><a href="https://oblerion.itch.io">Itch.io</a></li>
+		<li><a href="https://github.com/oblerion">Github</a></li>
+		<li><a href="https://oblerion.artstation.com">Artstation</a></li>
+		<li><a href="https://bsky.app/profile/magnusoblerion.bsky.social">Bluesky</a></li>
+	</ul>
+<footer>
+		<a style="display:block;" href="https://oblerion.itch.io/love2djs">
+			powered by love2d.js
+		</a>
+</footer>
 </body>
 </html>
