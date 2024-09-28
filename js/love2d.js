@@ -782,5 +782,5 @@ if (LOVE2D_TOUCH == true) {
 	_disableRightClickMenu();
 }
 window.requestAnimationFrame(_main_loop);
-export {love,math_random};
+//export {love,math_random};
 
