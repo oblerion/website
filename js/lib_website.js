@@ -15,6 +15,18 @@ function printcenter(text,y,size,scale)
 	y,0,size*scale);
 }
 
+function printleft(text,y,size,scale)
+{
+	love.graphics_print(text,
+	0,y,0,size*scale);
+}
+
+function printright(text,y,size,scale)
+{
+	love.graphics_print(text,
+	(love.graphics_getWidth()-getsize(text,size*scale)),
+	y,0,size*scale);
+}
 
 function textbutton(text,x,y,size)
 {

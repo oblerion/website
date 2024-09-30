@@ -1,67 +1,38 @@
-let title_img = love.graphics_newImage("asset/canvas-nightshade-slow.png");
-let os = love.system_getOs()
 let scale = 1;
 let scene_id=0;
+let projectlist = new ProjectList("project_list");
+projectlist.add("egba-engine","./asset/MlEygI.png","https://oblerion.itch.io/gba-engine",["c"]);
+projectlist.add("elyoko","./asset/dUagsX.png","https://oblerion.itch.io/elyoko",["c"]);
+projectlist.add("love2djs","./asset/Hw4tmq.png","https://oblerion.itch.io/love2djs",["js"]);
+projectlist.add("meca-frelion","./asset/ZvGh+s.png","https://oblerion.itch.io/meca-frelion",["3d"]);
+projectlist.add("matoran","./asset/PmRAtW.png","https://oblerion.itch.io/matoran-model",["3d"]);
+projectlist.add("consoledit","./asset/CxFWHN.png","https://oblerion.itch.io/consoledit",["c","c++"]);
+projectlist.add("voxelpack","./asset/w52W5A.png","https://oblerion.itch.io/3d-voxel-asset",["3d"]);
+projectlist.filter();
 
-document.getElementById("btn_title").onclick=function()
+document.getElementById("btn_all").onclick=function()
 {
 	scene_id=0;
+	projectlist.filter();
+}
+document.getElementById("btn_C++").onclick=function()
+{
+	scene_id=1;
+	projectlist.filter("c++");
 }
 document.getElementById("btn_C").onclick=function()
 {
 	scene_id=1;
+	projectlist.filter("c");
 }
 document.getElementById("btn_JS").onclick=function()
 {
 	scene_id=2;
+	projectlist.filter("js");
 }
 document.getElementById("btn_3D").onclick=function()
 {
 	scene_id=3;
+	projectlist.filter("3d");
 }
 	
-love.load=function()
-{
-	if(love.window_getWidth()<300) scale = 0.6;
-	else if(love.window_getWidth()<400) scale = 0.7;
-	else if(love.window_getWidth()<800) scale = 0.8;
-
-
-	if(love.window_getWidth()<=800)
-		love.window_setMode(
-			love.window_getWidth()-20,
-			550*(scale - 0.05));
-	else
-		love.window_setMode(800,550);
-	love.window_setTitle("magnus oblerion website"); 
-	love.graphics_setFont("Pixelify Sans");
-}
-love.update=function(dt)
-{
-
-}
-
-love.draw=function()
-{	
-	
-	//let sv = document.getElementById("tech-select").value;
-	switch(scene_id)
-	{
-		case 0:
-			title_draw(title_img,scale);
-		break;
-		case 1:
-			love.graphics_setColor(0,0,0,255);
-			love.graphics_print("scene1",23,23,15);
-		break;
-		case 2:
-
-		break;
-		case 3:
-
-		break;
-		default:;
-	}		
-
-
-}

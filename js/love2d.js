@@ -97,6 +97,10 @@ class Love
         this.lastUpdate = 0;
         this.loading = 0;
     }
+    getTextWidth(text)
+    {
+    	return this.context.measureText(text);
+    }
 	system_writeSave(name,val)
 	{
 		if(typeof(name)=="string" &&

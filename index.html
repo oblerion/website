@@ -1,58 +1,57 @@
 <!DOCTYPE html> 
 <html id="html" lang="en">
 <title>love2d.js</title>
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); 
-		@import url('./css/style.css')
-	</style>
+<style media="screen, print">
+	@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+	@import url('./css/style.css');
+</style>
 
-  <!--  <script nomodule>
-		// if no support for module
-		document.write("your old browser don't support module type : need update it");
-    </script>-->
-    <canvas id="canvas_love2d"></canvas>
+<head>
+    	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="./js/lib_project.js"></script>
 </head>
+
 <body>
-		
-	<script src="./js/love2d.js"></script>
-	<script src="./js/lib_website.js"></script>
-	<script src="./js/scene_title.js"></script>
-	<div style="text-align:center;">
-		<ul>
-			<li><button id="btn_title">title</button></li>
-			<li><button id="btn_C">C</button></li>
-			<li><button id="btn_JS">JS</button></li>
-			<li><button id="btn_3D">3d</button></li> 
+	<header>
+		<nav style="background-color:gray;  color:white; text-align:left;"
+			<ul>
+				<li><button class="button_tech">home</button></li>
+				<!--<li><button class="">1</button></li>-->
+			
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h1 class="title">Magnus Oblerion</h1>
+			<img src="./asset/canvas-nightshade-slow.png" class="img_title">
+			<p class="title"> Autistic C/JS indiedev <br>
+			pixelartist, lowpoly 3d modeller <br>
+			7 years of 2d games, NoAI, <br>
+			3d and 3dmodeling start in 2023.</p>	
+	
+		</section>
+		<section>
+			<ul>
+					<li><button class="button_tech" id="btn_all">All</button></li>
+					<li><button class="button_tech" id="btn_C">C</button></li>
+					<li><button class="button_tech" id="btn_C++">C++</button></li>
+					<li><button class="button_tech" id="btn_JS">JS</button></li>
+					<li><button class="button_tech" id="btn_3D">3d</button></li> 
+			</ul>
+			<div id="project_list" style="text-align:center;">
+			</div>
+		</section>
+		<script src="./js/main.js"></script>
+	</main>
+	<footer>
+		<ul> 
+			<li><a class="link" href="https://x.com/MagnusOblerion">Twitter</a></li>
+			<li><a class="link" href="https://oblerion.itch.io">Itch.io</a></li>
+			<li><a class="link" href="https://github.com/oblerion">Github</a></li>
+			<li><a class="link" href="https://oblerion.artstation.com">Artstation</a></li>
+			<li><a class="link" href="https://bsky.app/profile/magnusoblerion.bsky.social">Bluesky</a></li>
 		</ul>
-	</div>
-	<script src="./js/main.js"></script>
-	<div style="text-align:center;">
-		<a href="https://oblerion.itch.io/gba-engine">
-			<img src="./asset/MlEygI.png"/>
-		</a>
-		<a  href="https://oblerion.itch.io/elyoko">
-			<img src="./asset/dUagsX.png"/>
-		</a>
-		<a href="https://oblerion.itch.io/love2djs">
-			<img src="./asset/Hw4tmq.png"/> 
-		</a>
-		<a href="https://oblerion.itch.io/meca-frelion">
-			<img src="./asset/ZvGh+s.png"/>
-		</a>
-	</div>	
-	<ul> 
-		<li><a href="https://x.com/MagnusOblerion">Twitter</a></li>
-		<li><a href="https://oblerion.itch.io">Itch.io</a></li>
-		<li><a href="https://github.com/oblerion">Github</a></li>
-		<li><a href="https://oblerion.artstation.com">Artstation</a></li>
-		<li><a href="https://bsky.app/profile/magnusoblerion.bsky.social">Bluesky</a></li>
-	</ul>
-<footer>
-		<a style="display:block;" href="https://oblerion.itch.io/love2djs">
-			powered by love2d.js
-		</a>
-</footer>
+	</footer>
 </body>
 </html>
