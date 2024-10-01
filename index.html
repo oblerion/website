@@ -13,31 +13,44 @@
 
 <body>
 	<header>
-		<nav style="background-color:gray;  color:white; text-align:left;"
-			<ul>
-				<li><button class="button_tech">home</button></li>
-				<!--<li><button class="">1</button></li>-->
-			
-			</ul>
+		<nav>
+			<ul class="ul_link">
+				<li class="li_link"><a class="link" id="btn_home">home</a></li>
+				<li class="li_link"><a class="link" id="btn_egba">egba</a></li>
+				<li class="li_link"><a class="link" id="btn_elyoko">elyoko</a></li>
+			</ul>	
 		</nav>
 	</header>
-	<main>
+	<main class="main_unactive" id="main_egba">
+		<p> zzz </p>
+	</main>
+	<main class="main_active" id="main_title">
 		<section>
 			<h1 class="title">Magnus Oblerion</h1>
 			<img src="./asset/canvas-nightshade-slow.png" class="img_title">
-			<p class="title"> Autistic C/JS indiedev <br>
+			<p class="title_des"> Autistic C/JS indiedev <br>
 			pixelartist, lowpoly 3d modeller <br>
 			7 years of 2d games, NoAI, <br>
 			3d and 3dmodeling start in 2023.</p>	
 	
 		</section>
 		<section>
-			<ul>
-					<li><button class="button_tech" id="btn_all">All</button></li>
-					<li><button class="button_tech" id="btn_C">C</button></li>
-					<li><button class="button_tech" id="btn_C++">C++</button></li>
-					<li><button class="button_tech" id="btn_JS">JS</button></li>
-					<li><button class="button_tech" id="btn_3D">3d</button></li> 
+			<ul class="ul_button_tech">
+					<li class="li_button_tech">
+						<button class="button_tech" id="btn_all">All</button>
+					</li>
+					<li class="li_button_tech">
+						<button class="button_tech" id="btn_C">C</button>
+					</li>
+					<li class="li_button_tech">
+						<button class="button_tech" id="btn_C++">C++</button>
+					</li>
+					<li class="li_button_tech">
+						<button class="button_tech" id="btn_JS">JS</button>
+					</li>
+					<li class="li_button_tech">
+						<button class="button_tech" id="btn_3D">3d</button>
+					</li> 
 			</ul>
 			<div id="project_list" style="text-align:center;">
 			</div>
@@ -45,12 +58,20 @@
 		<script src="./js/main.js"></script>
 	</main>
 	<footer>
-		<ul> 
-			<li><a class="link" href="https://x.com/MagnusOblerion">Twitter</a></li>
-			<li><a class="link" href="https://oblerion.itch.io">Itch.io</a></li>
-			<li><a class="link" href="https://github.com/oblerion">Github</a></li>
-			<li><a class="link" href="https://oblerion.artstation.com">Artstation</a></li>
-			<li><a class="link" href="https://bsky.app/profile/magnusoblerion.bsky.social">Bluesky</a></li>
+		<ul class="ul_link">
+			<li class="li_link">
+				<a class="link" href="https://x.com/MagnusOblerion">Twitter</a>
+			</li>
+			<li class="li_link">
+				<a class="link" href="https://oblerion.itch.io">Itch.io</a>
+			</li>
+			<li class="li_link">
+				<a class="link" href="https://github.com/oblerion">Github</a>
+			</li>
+			<li class="li_link">
+				<a class="link" href="https://oblerion.artstation.com">Artstation</a>
+			</li>
+			<li class="li_link"><a class="link" href="https://bsky.app/profile/magnusoblerion.bsky.social">Bluesky</a></li>
 		</ul>
 	</footer>
 </body>

@@ -1,5 +1,4 @@
-let scale = 1;
-let scene_id=0;
+let button_id=0;
 let projectlist = new ProjectList("project_list");
 projectlist.add("egba-engine","./asset/MlEygI.png","https://oblerion.itch.io/gba-engine",["c"]);
 projectlist.add("elyoko","./asset/dUagsX.png","https://oblerion.itch.io/elyoko",["c"]);
@@ -10,29 +9,60 @@ projectlist.add("consoledit","./asset/CxFWHN.png","https://oblerion.itch.io/cons
 projectlist.add("voxelpack","./asset/w52W5A.png","https://oblerion.itch.io/3d-voxel-asset",["3d"]);
 projectlist.filter();
 
-document.getElementById("btn_all").onclick=function()
+const button_tech=[
+	document.getElementById("btn_all"),
+	document.getElementById("btn_C"),
+	document.getElementById("btn_C++"),
+	document.getElementById("btn_JS"),
+	document.getElementById("btn_3D")
+];
+
+const button_tag=[
+	null,
+	"c",
+	"c++",
+	"js",
+	"3d"
+];
+
+function _updateclassbtn(id)
 {
-	scene_id=0;
-	projectlist.filter();
+	button_tech[id].className="button_tech_down";
+	button_tech[button_id].className="button_tech";
+	button_id=id;
 }
-document.getElementById("btn_C++").onclick=function()
+
+button_tech[0].className="button_tech_down";
+for(let i=0;i<button_tech.length;i++)
 {
-	scene_id=1;
-	projectlist.filter("c++");
+	button_tech[i].onclick=function()
+	{
+		//button_id=0;
+		_updateclassbtn(i);
+		projectlist.filter(button_tag[i]);
+		
+	}
 }
-document.getElementById("btn_C").onclick=function()
+let main_id = 0;
+const mainArray=[
+	document.getElementById("main_title"),
+	document.getElementById("main_egba")
+];
+document.getElementById("btn_home").onclick=function()
 {
-	scene_id=1;
-	projectlist.filter("c");
+	if(main_id!=0)
+	{
+		mainArray[main_id].className="main_unactive";
+		mainArray[0].className="main_active";
+		main_id=0;
+	}	
 }
-document.getElementById("btn_JS").onclick=function()
+document.getElementById("btn_egba").onclick=function()
 {
-	scene_id=2;
-	projectlist.filter("js");
+	if(main_id!=1)
+	{
+		mainArray[main_id].className="main_unactive";
+		mainArray[1].className="main_active";
+		main_id=1;
+	}
 }
-document.getElementById("btn_3D").onclick=function()
-{
-	scene_id=3;
-	projectlist.filter("3d");
-}
-	

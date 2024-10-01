@@ -51,21 +51,14 @@ class ProjectList
 	filter(ptag)
 	{
 		let str = "";
-		if(ptag==null)
+		for(let i=0;i<this.length();i++)
 		{
-			for(let i=0;i<this.length();i++)
+			if(ptag==null || this.list[i].findTag(ptag)>-1)
 			{
-				str = str + "<a href="+'"'+this.list[i].url()+'"'+"><img src="+'"'+this.list[i].img()+'"'+"/></a>";
+				str = str+'<a href="'+this.list[i].url()+'">';
+				str = str+'<img  class="project_img" src="'+this.list[i].img()+'"/>';
+				str = str+'</a>';
 			}
-		}
-		else
-		{
-			for(let i=0;i<this.length();i++)
-			{
-				if(this.list[i].findTag(ptag)>-1)
-				str = str + "<a href="+'"'+this.list[i].url()+'"'+"><img src="+'"'+this.list[i].img()+'"'+"/></a>";
-			}
-
 		}
 		this.element.innerHTML=str;
 	}
