@@ -63,8 +63,9 @@ html{
 
 }
 .li_button_tech{
-	display: inline;
+	display: inline-flex;
 	border-radius: 5px;
+	margin: 2px;
 }
 
 .project_img{
@@ -96,6 +97,6 @@ html{
 
 }
 .li_link{
-	display: inline;
+	display: inline-flex;
 	border-radius: 5px;
 }

@@ -50,13 +50,13 @@ class ProjectList
 	
 	filter(ptag)
 	{
-		let str = "";
+		let str = '';
 		for(let i=0;i<this.length();i++)
 		{
 			if(ptag==null || this.list[i].findTag(ptag)>-1)
 			{
 				str = str+'<a href="'+this.list[i].url()+'">';
-				str = str+'<img  class="project_img" src="'+this.list[i].img()+'"/>';
+				str = str+'<img  class="project_img"  src="'+this.list[i].img()+'"/>';
 				str = str+'</a>';
 			}
 		}
