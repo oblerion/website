@@ -24,6 +24,7 @@ class HtmlStyle
 		{
 			if(nb>0) str = str + ";";
 			str = str + key + ":" + value;
+			nb++;
 		}
 		element.setAttribute("style",str);
 	}	

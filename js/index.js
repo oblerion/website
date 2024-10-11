@@ -6,7 +6,8 @@ function fheader(html)
 	const menu_list = [
 		"home",
 		"egba",
-		"elyoko"
+		"elyoko",
+		"contact"
 	];
 
 	let header = html.addChild("header");
@@ -50,15 +51,30 @@ function ffooter(html)
 			}
 }
 
-class Scene_title
+class Scene
 {
 	constructor()
 	{
+			this.main;
+	}
+	invisible()
+	{
+		this.main.setAttribute("style","display:none;");
+	}
+	visible()
+	{
+		this.main.setAttribute("style","display:block;");
+	}
+}
+
+class Scene_title extends Scene
+{
+	constructor()
+	{
+		super();
 		this.button_id=0;
 		this.button_tech=[];
-		this.main;
 	}
-
 
 	fmain(html,pmain)
 	{
@@ -169,29 +185,162 @@ class Scene_title
 			});
 		}
 	}
-	invisible()
-	{
-		this.main.setAttribute("style","display:none;");
-	}
-	visible()
-	{
-		this.main.setAttribute("style","display:block;");
-	}
 }
 
-let scene_title = new Scene_title();
+class Scene_egba extends Scene
+{
+		constructor()
+		{
+				super();
+		}
+		fmain(html)
+		{
+				this.main = html.addChild("main");
+				let h1 = this.main.addChild("h1");
+					h1.addContent("egba");
+					h1.setAttribute("class","title");
+				let img = this.main.addChild("img");
+					img.setAttribute("src","./asset/MlEygI.png");
+					img.setAttribute("class","img_title");
+				let p = this.main.addChild("p");
+					p.addContent("gba like 2d game engine");
+					p.addContent("<br> build with c, raylib.h and lua.h");
+					p.setAttribute("class","title_des");
+				let link = this.main.addChild("a");
+					link.setAttribute("href","https://oblerion.itch.io/gba-engine");
+					let p_link = link.addChild("p");
+						p_link.addContent("get engine");
+						p_link.setAttribute("class","link");
+				let imgstyle = new HtmlStyle();
+					imgstyle.add("width","80%");
+					imgstyle.add("height","auto");
+					imgstyle.add("margin-left","10%");
+					imgstyle.add("margin-right","10%");
+					
+				const img_list = [
+					"./asset/egba/Capture d’écran du 2024-08-11 11-20-56.png",
+					"./asset/egba/Capture d’écran du 2024-08-11 11-21-15.png",
+					"./asset/egba/Capture d’écran du 2024-08-11 11-23-20.png",
+					"./asset/egba/Capture d’écran du 2024-08-11 11-23-37.png",
+					"./asset/egba/Capture d’écran du 2024-08-11 11-24-13.png",
+					"./asset/egba/Capture d’écran du 2024-08-11 11-24-57.png"
+				];
+				for(let i=0;i<img_list.length;i++)
+				{
+					let img1 = this.main.addChild("img");
+						img1.setAttribute("src",img_list[i]);
+						imgstyle.setStyle(img1);
+				}
+		}
+}
+
+class Scene_elyoko extends Scene
+{
+		constructor()
+		{
+				super();
+				
+		}
+		fmain(html)
+		{
+				this.main = html.addChild("main");
+					let h1 = this.main.addChild("h1");
+						h1.addContent("elyoko");
+						h1.setAttribute("class","title");
+					let img = this.main.addChild("img");
+						img.setAttribute("src","./asset/dUagsX.png");
+						img.setAttribute("class","img_title");
+					let p = this.main.addChild("p");
+						p.addContent("3d game engine");
+						p.setAttribute("class","title_des");
+					let link = this.main.addChild("a");
+					link.setAttribute("href","https://oblerion.itch.io/elyoko");
+					let p_link = link.addChild("p");
+						p_link.addContent("get engine");
+						p_link.setAttribute("class","link");
+		}
+}
+
+class Scene_contact extends Scene
+{
+		constructor()
+		{
+			super();
+		}
+		fmain(html)
+		{
+				this.main = html.addChild("main");
+				let h1 = this.main.addChild("h1");
+					h1.addContent("Contact");
+					h1.setAttribute("class","title");
+					
+				let p = this.main.addChild("p");
+					p.addContent("email : magnusoblerion@proton.me");
+					p.setAttribute("class","title_des");
+				let form = this.main.addChild("form");
+					form.setAttribute("action","mailto:magnusoblerion@proton.me");
+					
+				let btn_send = form.addChild("input");
+					btn_send.setAttribute("type","submit");
+					btn_send.setAttribute("class","button_tech");
+					btn_send.setAttribute("style","display:block;margin-left:auto;margin-right:auto;");
+					btn_send.setAttribute("value","send mail");
+						
+				
+		}
+		
+}
+
 fheader(html);
+
+let scene_title = new Scene_title();
 scene_title.fmain(html);
-ffooter(html);
 scene_title.Project_init();
+
+let scene_egba = new Scene_egba();
+scene_egba.fmain(html);
+scene_egba.invisible();
+
+let scene_elyoko = new Scene_elyoko();
+scene_elyoko.fmain(html);
+scene_elyoko.invisible();
+
+let scene_contact = new Scene_contact();
+scene_contact.fmain(html);
+scene_contact.invisible();
+
+ffooter(html);
+
 //------------------------------------------
 link_up[0].onClick(function()
 {
-	scene_title.visible();	
+	scene_title.visible();
+	scene_egba.invisible();	
+	scene_elyoko.invisible();
+	scene_contact.invisible();
 }
 );
 link_up[1].onClick(function()
 {
 	scene_title.invisible();
+	scene_egba.visible();
+	scene_elyoko.invisible();
+	scene_contact.invisible();
 }
 );
+link_up[2].onClick(function()
+{
+	scene_title.invisible();
+	scene_egba.invisible();
+	scene_elyoko.visible();
+	scene_contact.invisible();
+}
+);
+link_up[3].onClick(function()
+{
+	scene_title.invisible();
+	scene_egba.invisible();
+	scene_elyoko.invisible()
+	scene_contact.visible();
+}
+)
