@@ -152,6 +152,7 @@ class Scene_title extends Scene
 		
 		let projectlist = new ProjectList("project_list");
 		// 2024
+		projectlist.add("oide","./asset/xDzch6.png","https://oblerion.itch.io/oide",["c","c++"]);
 		projectlist.add("egba-engine","./asset/MlEygI.png","https://oblerion.itch.io/gba-engine",["c","2024"]);
 		projectlist.add("elyoko","./asset/dUagsX.png","https://oblerion.itch.io/elyoko",["c","2024"]);
 		projectlist.add("meca-frelion","./asset/ZvGh+s.png","https://oblerion.itch.io/meca-frelion",["3d","2024"]);
