@@ -30,7 +30,6 @@ function fheader(html)
 function ffooter(html)
 {
 	const link_list = [
-		"Twitter","https://x.com/MagnusOblerion",
 		"Itch.io","https://oblerion.itch.io",
 		"Github","https://github.com/oblerion",
 		"Artstation","https://oblerion.artstation.com",
