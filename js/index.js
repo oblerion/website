@@ -6,8 +6,7 @@ function fheader(html)
 	const menu_list = [
 		"home",
 		"egba",
-		"elyoko",
-		"contact"
+		"elyoko"
 	];
 
 	let header = html.addChild("header");
@@ -48,6 +47,18 @@ function ffooter(html)
 							a.setAttribute("href",link_list[i+1]);
 							a.addContent(link_list[i]);
 			}
+		
+		let p = footer.addChild("p");
+			p.addContent("email : magnusoblerion@proton.me");
+			p.setAttribute("class","title_des");
+		let form = footer.addChild("form");
+			form.setAttribute("action","mailto:magnusoblerion@proton.me");
+			
+		let btn_send = form.addChild("input");
+			btn_send.setAttribute("type","submit");
+			btn_send.setAttribute("class","button_tech");
+			btn_send.setAttribute("style","display:block;margin-left:auto;margin-right:auto;");
+			btn_send.setAttribute("value","send mail");	
 }
 
 class Scene
@@ -284,36 +295,6 @@ class Scene_elyoko extends Scene
 		}
 }
 
-class Scene_contact extends Scene
-{
-		constructor()
-		{
-			super();
-		}
-		fmain(html)
-		{
-				this.main = html.addChild("main");
-				let h1 = this.main.addChild("h1");
-					h1.addContent("Contact");
-					h1.setAttribute("class","title");
-					
-				let p = this.main.addChild("p");
-					p.addContent("email : magnusoblerion@proton.me");
-					p.setAttribute("class","title_des");
-				let form = this.main.addChild("form");
-					form.setAttribute("action","mailto:magnusoblerion@proton.me");
-					
-				let btn_send = form.addChild("input");
-					btn_send.setAttribute("type","submit");
-					btn_send.setAttribute("class","button_tech");
-					btn_send.setAttribute("style","display:block;margin-left:auto;margin-right:auto;");
-					btn_send.setAttribute("value","send mail");
-						
-				
-		}
-		
-}
-
 fheader(html);
 
 let scene_title = new Scene_title();
@@ -328,10 +309,6 @@ let scene_elyoko = new Scene_elyoko();
 scene_elyoko.fmain(html);
 scene_elyoko.invisible();
 
-let scene_contact = new Scene_contact();
-scene_contact.fmain(html);
-scene_contact.invisible();
-
 ffooter(html);
 
 //------------------------------------------
@@ -340,7 +317,6 @@ link_up[0].onClick(function()
 	scene_title.visible();
 	scene_egba.invisible();	
 	scene_elyoko.invisible();
-	scene_contact.invisible();
 }
 );
 link_up[1].onClick(function()
@@ -348,7 +324,6 @@ link_up[1].onClick(function()
 	scene_title.invisible();
 	scene_egba.visible();
 	scene_elyoko.invisible();
-	scene_contact.invisible();
 }
 );
 link_up[2].onClick(function()
@@ -356,14 +331,6 @@ link_up[2].onClick(function()
 	scene_title.invisible();
 	scene_egba.invisible();
 	scene_elyoko.visible();
-	scene_contact.invisible();
 }
 );
-link_up[3].onClick(function()
-{
-	scene_title.invisible();
-	scene_egba.invisible();
-	scene_elyoko.invisible()
-	scene_contact.visible();
-}
-)
+
