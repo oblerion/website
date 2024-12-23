@@ -243,21 +243,44 @@ class Scene_elyoko extends Scene
 		}
 		fmain(html)
 		{
-				this.main = html.addChild("main");
-					let h1 = this.main.addChild("h1");
-						h1.addContent("elyoko");
-						h1.setAttribute("class","title");
-					let img = this.main.addChild("img");
-						img.setAttribute("src","./asset/dUagsX.png");
-						img.setAttribute("class","img_title");
-					let p = this.main.addChild("p");
-						p.addContent("3d game engine");
-						p.setAttribute("class","title_des");
-					let link = this.main.addChild("a");
-					link.setAttribute("href","https://oblerion.itch.io/elyoko");
-					let p_link = link.addChild("p");
-						p_link.addContent("get engine");
-						p_link.setAttribute("class","link");
+			this.main = html.addChild("main");
+				let h1 = this.main.addChild("h1");
+					h1.addContent("elyoko");
+					h1.setAttribute("class","title");
+				let img = this.main.addChild("img");
+					img.setAttribute("src","./asset/dUagsX.png");
+					img.setAttribute("class","img_title");
+				let p = this.main.addChild("p");
+					p.addContent("3d game engine,");
+					p.addContent("<br>made in C with raylib.h, lua.h");
+					p.addContent("<br>with code lyoko lib/asset");
+					p.setAttribute("class","title_des");
+				let link = this.main.addChild("a");
+				link.setAttribute("href","https://oblerion.itch.io/elyoko");
+				let p_link = link.addChild("p");
+					p_link.addContent("get engine");
+					p_link.setAttribute("class","link");
+				let center_video = this.main.addChild("center");
+				let video = center_video.addChild("iframe");
+				video.setAttribute("width","560");
+				video.setAttribute("height","315");
+				video.setAttribute("frameborder","0");
+				video.setAttribute("allow","accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share");
+				video.setAttribute("allowfullscreen","");
+				video.setAttribute("src","https://www.youtube.com/embed/aAsZYPaMRhk?si=_kBFqHKVjTMpb0P-");
+
+				// screenshoot
+				let lscreenshoot = [
+					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzc3NDEyNC5wbmc=/250x600/i3oaEs.png",
+					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzcxNDEwOS5wbmc=/250x600/iLcBzQ.png",
+					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzY0NTkzMi5wbmc=/250x600/TUYycL.png"
+				];
+				for (let i=0;i<lscreenshoot.length;i++)
+				{
+					let center_scsh = this.main.addChild("center");
+					let scsh = center_scsh.addChild("img");
+					scsh.setAttribute("src",lscreenshoot[i]);
+				}
 		}
 }
 
