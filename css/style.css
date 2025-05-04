@@ -6,9 +6,9 @@
 {
 	display:none;
 }
-
 html{
-	background: linear-gradient(white,#4ab0b0);
+	background-image: linear-gradient(white,#4ab0b0,white);
+	height: 400%;
 }
 .title{
 	color: black;
@@ -24,7 +24,11 @@ html{
 	font-size: 15px;
 }
 
-
+@keyframes animupdown
+{
+	from {transform: translateY(6px);}
+	to {transform: translateX(-2px);}
+}
 .img_title
 {
 	display:block;
@@ -33,7 +37,6 @@ html{
 	margin-right:auto;
 }
 .button_tech{
-	padding; 10px 2px;
 	font-size: 19px;
 	font-family: Silkscreen;
 	color: black;
@@ -45,12 +48,12 @@ html{
 	background-color: white;
 }
 .button_tech_down{
-	padding; 10px 2px;
 	font-size: 19px;
 	font-family: Silkscreen;
 	color: white;
 	background-color: black;
 	border-radius: 1px;
+	animation: animupdown 0.3s;
 }
 .button_tech_down:hover{
 	background-color: darkgray;
@@ -78,6 +81,7 @@ html{
 }
 .project_img:hover{
 	border-radius: 35px;
+	animation: animupdown 0.3s;
 }
 
 .link{
