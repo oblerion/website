@@ -273,8 +273,9 @@ class Scene_elyoko extends Scene
 					p_link.setAttribute("class","link");
 				let center_video = this.main.addChild("center");
 				let video = center_video.addChild("iframe");
-				video.setAttribute("width","560");
-				video.setAttribute("height","315");
+				video.setAttribute("width","70%");
+				video.setAttribute("height","900px")
+				//video.setAttribute("min-height","1200px");
 				video.setAttribute("frameborder","0");
 				video.setAttribute("allow","accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share");
 				video.setAttribute("allowfullscreen","");
@@ -282,15 +283,18 @@ class Scene_elyoko extends Scene
 
 				// screenshoot
 				let lscreenshoot = [
-					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzc3NDEyNC5wbmc=/250x600/i3oaEs.png",
-					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzcxNDEwOS5wbmc=/250x600/iLcBzQ.png",
-					"https://img.itch.zone/aW1hZ2UvMjk0Nzc1MS8xNzY0NTkzMi5wbmc=/250x600/TUYycL.png"
+					"./asset/18ySIS.png",
+					"./asset/M5S4qE.png",
+					"./asset/6GZ+5E.png",
+					"./asset/IM1LEM.png"
 				];
 				for (let i=0;i<lscreenshoot.length;i++)
 				{
 					let center_scsh = this.main.addChild("center");
 					let scsh = center_scsh.addChild("img");
 					scsh.setAttribute("src",lscreenshoot[i]);
+					scsh.setAttribute("width","70%");
+					scsh.setAttribute("height","auto");
 				}
 		}
 }
