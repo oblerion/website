@@ -144,6 +144,14 @@ class HtmlElement
 			this.list.splice(ei,1);
 		}
 	}
+	remChildren()
+	{
+		for(let i=this.list.length-1;i>-1;i--)
+		{
+			this.delChild(this.list[i].tag);
+			this.list.splice(i,1);
+		}
+	}
 	onClick(funct)
 	{
 		this.get().onclick=funct;

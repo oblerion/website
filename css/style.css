@@ -72,16 +72,35 @@ html{
 }
 
 .project_img{
+	display: inline-block;
 	border-radius: 5px;
-	max-width: 100%;
-	max-height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 	margin-top: 1%;
 	margin-left: 5%;
 	margin-right: 5%;
 }
-.project_img:hover{
+
+.project_overlay
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.project_img:hover {
 	border-radius: 35px;
 	animation: animupdown 0.3s;
+	.project_overlay{ 
+		opacity: 1;
+	}
 }
 
 .link{

@@ -23,7 +23,6 @@ function fheader(html)
 						a.setAttribute("id","btn_"+menu_list[i]);
 					link_up.push(a);
 				}
-
 }
 
 function ffooter(html)
@@ -136,9 +135,7 @@ class Scene_title extends Scene
 									button.addContent(list_btn[i]);
 									this.button_tech.push(button);
 						}
-				let div = section2.addChild("div");
-				div.setAttribute("id","project_list");
-				div.setAttribute("style","text-align:center;");
+			this.Project_init(section2);
 	}
 
 
@@ -149,7 +146,7 @@ class Scene_title extends Scene
 			this.button_tech[i].setAttribute("class","button_tech");
 		this.button_tech[id].setAttribute("class","button_tech_down");
 	}
-	Project_init()
+	Project_init(pparent)
 	{
 		const button_tag=[
 			null,
@@ -160,7 +157,7 @@ class Scene_title extends Scene
 			"3d"
 		];
 		
-		let projectlist = new ProjectList("project_list");
+		let projectlist = new ProjectList(pparent);
 		// 2024
 		projectlist.add("oide","./asset/xDzch6.png","https://oblerion.itch.io/oide",["c","c++"]);
 		projectlist.add("egba-engine","./asset/MlEygI.png","https://oblerion.itch.io/gba-engine",["c","2024"]);
@@ -195,6 +192,7 @@ class Scene_title extends Scene
 				
 			});
 		}
+		return projectlist;
 	}
 }
 
@@ -303,7 +301,6 @@ fheader(html);
 
 let scene_title = new Scene_title();
 scene_title.fmain(html);
-scene_title.Project_init();
 
 let scene_egba = new Scene_egba();
 scene_egba.fmain(html);

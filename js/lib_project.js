@@ -31,11 +31,15 @@ class Project
 
 class ProjectList
 {
-	constructor(pid)
+	constructor(pparent)
 	{
 		this.list=[];
-		this.element=document.getElementById(pid);
+		this.element= pparent.addChild("div");
+		this.element.setAttribute("id","project_list");
+		let ul = this.element.addChild("ul");
+			ul.setAttribute("style","display:flex;gap:1em;padding:0.5em;margin:auto 15%;justify-content:space-between;flex-wrap:wrap;align-items:center;");
 		this.filter();
+
 	}
 
 	add(pname,pimg,purl,ptags)
@@ -50,17 +54,26 @@ class ProjectList
 	
 	filter(ptag)
 	{
-		let str = '';
+		let ul = this.element.getChild("ul");
+		ul.remChildren();
 		for(let i=0;i<this.length();i++)
 		{
+			
 			if(ptag==null || this.list[i].findTag(ptag)>-1)
 			{
-				str = str+'<a href="'+this.list[i].url()+'">';
-				str = str+'<img  class="project_img"  src="'+this.list[i].img()+'"/>';
-				str = str+'</a>';
+				let li = ul.addChild("li");
+					li.setAttribute("style","display:inline-block;padding:0.8em;");
+					let a = li.addChild("a");
+						a.setAttribute("href",this.list[i].url());
+							let img = a.addChild("img");
+								img.setAttribute("class","project_img");
+								img.setAttribute("src",this.list[i].img());
 			}
 		}
-		this.element.innerHTML=str;
+	}
+	getElement()
+	{
+		return this.element;
 	}
 
 };
