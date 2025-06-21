@@ -116,6 +116,7 @@ class Scene_title extends Scene
 			"C++",
 			"JS",
 			"LUA",
+			"SQL",
 			"3D"
 		];
 						
@@ -154,10 +155,14 @@ class Scene_title extends Scene
 			"c++",
 			"js",
 			"lua",
+			"sql",
 			"3d"
 		];
 		
 		let projectlist = new ProjectList(pparent);
+		// 2025
+		projectlist.add("exodus","./asset/lTKzHQ.png","https://oblerion.itch.io/exodus",["c","c++","sql"]);
+
 		// 2024
 		projectlist.add("oide","./asset/xDzch6.png","https://oblerion.itch.io/oide",["c","c++"]);
 		projectlist.add("egba-engine","./asset/MlEygI.png","https://oblerion.itch.io/gba-engine",["c","2024"]);
